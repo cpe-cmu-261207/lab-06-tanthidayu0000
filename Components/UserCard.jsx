@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons";
 import UserCardDetail from "./UserCardDetail";
 
-export default function UserCard() {
+export default function UserCard(props) {
   const [click, setClick] = useState(false);
   return (
     <div
@@ -15,7 +15,7 @@ export default function UserCard() {
         <img src={props.imgUrl} width="90px" class="rounded-circle me-4" />
         <span className="text-center display-6 me-auto">{props.name}</span>
         {!click && <IconChevronDown />}
-        {!click && <IconChevronUp />}
+        {click && <IconChevronUp />}
       </div>
       {click && <UserCardDetail email={props.email} address={props.address} />}
     </div>
