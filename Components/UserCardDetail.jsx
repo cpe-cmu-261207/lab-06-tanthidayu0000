@@ -1,7 +1,7 @@
 import React from "react";
 import { IconMailForward, IconMapPins } from "@tabler/icons";
 
-export default function UserCardDetail() {
+export default function UserCardDetail(props) {
   return (
     <div className="text-center">
       <p>
