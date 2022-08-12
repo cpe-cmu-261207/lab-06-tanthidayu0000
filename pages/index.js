@@ -12,7 +12,7 @@ export default function Home() {
   const [genAmount, setGenAmount] = useState("");
   const [users, setUsers] = useState([]);
   const genUsers = async () => {
-    if (getAmount < 1) {
+    if (genAmount < 1) {
       alert("Invalid number of user");
       return;
     }
