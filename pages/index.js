@@ -9,14 +9,16 @@ import { useState } from "react";
 import UserCard from "../Components/UserCard";
 
 export default function Home() {
-  const [genAmount, setGenAmount] = useState("");
+  const [genAmount, setGenAmount] = useState(1);
   const [users, setUsers] = useState([]);
   const genUsers = async () => {
     if (genAmount < 1) {
       alert("Invalid number of user");
       return;
     }
-    const resp = await axios.get(`https://randomuser.me/api/`);
+    const resp = await axios.get(
+      `https://randomuser.me/api/?results=${genAmount}`
+    );
 
     const newUsers = [];
     for (const x of resp.data.results) {
